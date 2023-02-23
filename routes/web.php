@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\landingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/ms-admin-ikhsannawawi', function () {
     return view('welcome');
 });
+
+Route::get('/', [landingController::class, 'index'])->name('index');
+Route::get('/category/romance', [landingController::class, 'index'])->name('index');
+Route::get('/detail-video', [landingController::class, 'index'])->name('index');
+Route::get('/detail-blog', [landingController::class, 'index'])->name('index');
+Route::get('/blog', [landingController::class, 'index'])->name('index');
